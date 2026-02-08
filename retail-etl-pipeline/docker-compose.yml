@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  etl_postgres:
+    image: postgres:15
+    container_name: etl_postgres
+    restart: always
+    ports:
+      - "5432:5432"   # Maps container port to local host
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1235
+      POSTGRES_DB: etl_project
+    volumes:
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql  # Auto-run init script
+      - pg_data:/var/lib/postgresql/data  # Persist data between container restarts
+
+volumes:
+  pg_data:
