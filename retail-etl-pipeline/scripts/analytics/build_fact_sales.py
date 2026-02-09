@@ -14,7 +14,7 @@ def build_fact_sales():
     print("🔥 Building fact_sales")
 
     query = """
-        SELECT
+        SELECT DISTINCT
             s.transaction_id,
             s.transaction_date,
             s.amount,

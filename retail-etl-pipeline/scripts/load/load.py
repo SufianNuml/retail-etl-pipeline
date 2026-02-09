@@ -1,3 +1,11 @@
+import sys
+import io
+
+# This fix must be inside load.py because it is the one printing the emoji
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+
 import pandas as pd
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
@@ -23,7 +31,7 @@ engine = create_engine(
 )
 
 def load_raw_data():
-    print("🚀 STEP 2: LOAD — Raw data to PostgreSQL")
+    print(" STEP 2: LOAD — Raw data to PostgreSQL")
 
     # Path to raw CSV
     csv_path = "data/raw_retail_data.csv"
