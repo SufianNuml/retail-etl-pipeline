@@ -937,7 +937,7 @@ This project was built to demonstrate **professional-grade data engineering skil
 
 ### ⭐ If this project helped you, please star it on GitHub! ⭐
 
-**Made with ❤️ by Sufian | UAE Data Engineer**
+**Made with ❤️ by Sufian | Data Engineer**
 
 </div>
 
